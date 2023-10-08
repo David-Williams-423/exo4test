@@ -1,0 +1,14 @@
+<div class="container">
+    <h3>Check In</h3>
+
+    <form [formGroup]="checkin_fb" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Enter PID" formControlName="pid" required>
+        <button type="submit">Check In</button>
+    </form>
+
+    <!-- <div *ngIf="message">
+        {{ message }}
+    </div> -->
+</div>
+
+<a routerLink="/">Home</a>

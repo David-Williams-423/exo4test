@@ -1,0 +1,41 @@
+<h1>Stats</h1>
+
+<h2>Registered Members</h2>
+<table>
+    <thead>
+        <tr>
+            <th>PID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users$ | async">
+            <td>{{ user.pid }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Checked-In Users</h2>
+<table>
+    <thead>
+        <tr>
+            <th>PID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Check-in Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let checkin of checkedInUsers$ | async">
+            <td>{{ checkin.user.pid }}</td>
+            <td>{{ checkin.user.first_name }}</td>
+            <td>{{ checkin.user.last_name }}</td>
+            <td>{{ checkin.created_at | date: 'yyyy/MM/dd @ hh:mma' }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a routerLink="/">Home</a>
